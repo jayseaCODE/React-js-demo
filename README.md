@@ -65,7 +65,14 @@ Give an example
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+### Creating a production build
+So far, we’ve been building this app in development mode. In this mode, our code isn’t minified and some of the things run in a slow/verbose setting so that we can debug issues more easily. When it’s time to send the app live to our real users, we want the fastest and most compact solution possible. For that, we can go back to the command line and enter the following (after stopping the build by pressing Ctrl+C):
+
+```
+npm run build
+```
+
+The script takes a few minutes to create an optimized set of files for you.
 
 ## Built With
 
