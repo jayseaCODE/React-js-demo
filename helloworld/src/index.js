@@ -3,9 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import IPAddressContainer from "./IPAddressContainer.js";
 import HelloWorld from './HelloWorld'
 
-ReactDOM.render(<HelloWorld />, document.getElementById('root'));
+ReactDOM.render(
+    <div>
+        <IPAddressContainer/>
+    </div>
+    , document.getElementById('root'));
 //ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
