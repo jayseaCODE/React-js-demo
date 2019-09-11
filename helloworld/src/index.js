@@ -5,10 +5,11 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import IPAddressContainer from "./IPAddressContainer.js";
 import HelloWorld from './HelloWorld'
+import ToDoList from './ToDoList';
 
 ReactDOM.render(
     <div>
-        <IPAddressContainer/>
+        <ToDoList/>
     </div>
     , document.getElementById('root'));
 //ReactDOM.render(<App />, document.getElementById('root'));
