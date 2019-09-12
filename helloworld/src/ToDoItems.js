@@ -18,7 +18,7 @@ class ToDoItems extends Component
     {
         const items = this.props.entries;
         return (
-            <ul>
+            <ul className="theList">
                 {items.map(this.createItem)}
             </ul>
         )
