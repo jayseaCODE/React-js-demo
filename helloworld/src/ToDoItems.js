@@ -12,6 +12,7 @@ class ToDoItems extends Component
 
     deleteItem(key)
     {
+        this.props.delete(key);
     }
 
     createItem(item)
