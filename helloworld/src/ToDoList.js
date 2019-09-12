@@ -15,7 +15,19 @@ class ToDoList extends Component
 
   addItem(e)
   {
-
+    var itemArray = this.state.items;
+    if (this._inputElement.value !== "") {
+      itemArray.unshift(
+        {
+          text: this._inputElement.value,
+          key: Date.now()    
+        }
+      );     
+      this.setState({items: itemArray});
+      this._inputElement.value = "";  
+    }   
+    console.log(itemArray);   
+    e.preventDefault();
   }
 
   render() {
