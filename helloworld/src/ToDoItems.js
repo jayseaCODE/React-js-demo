@@ -4,14 +4,21 @@ class ToDoItems extends Component
 {
     constructor(props)
     {
-        super(props)
+        super(props);
 
-        this.createItem = this.createItem.bind(this)
+        this.deleteItem = this.deleteItem.bind(this);
+        this.createItem = this.createItem.bind(this);
+    }
+
+    deleteItem(key)
+    {
     }
 
     createItem(item)
     {
-        return <li key={item.key}>{item.text}</li>
+        return <li  onClick={() => this.deleteItem(item.key)}
+                    key={item.key}>
+                {item.text}</li>
     }
 
     render()
