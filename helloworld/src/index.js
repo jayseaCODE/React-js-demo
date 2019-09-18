@@ -10,12 +10,7 @@ import MenuContainer from './MenuContainer';
 
 ReactDOM.render(
     <div>
-        <div>
-            <MenuContainer/>
-        </div>
-        <div className="toDoList">
-            <ToDoList/>
-        </div>
+        <MenuContainer/>
     </div>
     , document.getElementById('root'));
 //ReactDOM.render(<App />, document.getElementById('root'));
