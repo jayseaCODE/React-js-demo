@@ -6,10 +6,16 @@ import * as serviceWorker from './serviceWorker';
 import IPAddressContainer from "./IPAddressContainer.js";
 import HelloWorld from './HelloWorld'
 import ToDoList from './ToDoList';
+import MenuContainer from './MenuContainer';
 
 ReactDOM.render(
     <div>
-        <ToDoList/>
+        <div>
+            <MenuContainer/>
+        </div>
+        <div className="toDoList">
+            <ToDoList/>
+        </div>
     </div>
     , document.getElementById('root'));
 //ReactDOM.render(<App />, document.getElementById('root'));
