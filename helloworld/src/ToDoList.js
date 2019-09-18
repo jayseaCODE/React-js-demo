@@ -14,6 +14,7 @@ class ToDoList extends Component
 
     this.addItem = this.addItem.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   addItem(e)
@@ -43,13 +44,21 @@ class ToDoList extends Component
     });
   }
 
+  handleInputChange(event)
+  {
+    const alternativeInput = event.target.value;
+    const checkInputElement = this._inputElement.value;
+    // alternativeInput and checkInputElement should contain the same value
+  }
+
   render() {
       return (
         <div className="todoListMain">
           <div className="header">
             <form onSubmit={this.addItem}>
               <input  ref={(a)=>this._inputElement = a} 
-                      placeholder="enter task">
+                      placeholder="enter task"
+                      onChange={this.handleInputChange}>
               </input>
               <button type="submit">add</button>
             </form>
