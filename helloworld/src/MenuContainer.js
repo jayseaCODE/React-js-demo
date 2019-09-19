@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './MenuContainer.css'
+import MenuButton from './MenuButton';
 import ToDoList from './ToDoList';
 
 class MenuContainer extends Component
@@ -13,6 +14,7 @@ class MenuContainer extends Component
         };
 
         this.toggleMenu = this.toggleMenu.bind(this);
+        this.handleMouseDown = this.handleMouseDown.bind(this);
     }
 
     toggleMenu()
@@ -25,11 +27,21 @@ class MenuContainer extends Component
         })
     }
 
+    handleMouseDown(event)
+    {
+        this.toggleMenu();
+        console.log("Mouse clicked");
+        event.stopPropagation();
+    }
+
     render()
     {
         return (
-            <div className="toDoList">
-                <ToDoList/>
+            <div>
+                <MenuButton handleMouseDown={this.handleMouseDown}/>
+                <div className="toDoList">
+                    <ToDoList/>
+                </div>
             </div>
         )
     }

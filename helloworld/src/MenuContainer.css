@@ -1,7 +1,10 @@
+body {
+  background-color: #66CCFF;
+}
+
 .toDoList {
     padding: 50px;
     margin: 0;
-    background-color: #66CCFF;
     font-family: sans-serif;
     display: flex;
     align-items: center;
