@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './MenuContainer.css'
+import Menu from './Menu';
 import MenuButton from './MenuButton';
 import ToDoList from './ToDoList';
 
@@ -10,7 +11,7 @@ class MenuContainer extends Component
         super(props);
 
         this.state = {
-            "visible" : false
+            visible : false
         };
 
         this.toggleMenu = this.toggleMenu.bind(this);
@@ -19,12 +20,11 @@ class MenuContainer extends Component
 
     toggleMenu()
     {
-        this.setState((prevState) => 
-        {
-            this.state = {
-                "visible" : !prevState
+        this.setState((prevState) => (
+            {
+                visible : !this.state.visible
             }
-        })
+        ));
     }
 
     handleMouseDown(event)
@@ -39,6 +39,8 @@ class MenuContainer extends Component
         return (
             <div>
                 <MenuButton handleMouseDown={this.handleMouseDown}/>
+                <Menu handleMouseDown={this.handleMouseDown}
+                        menuVisibility={this.state.visible}/>
                 <div className="toDoList">
                     <ToDoList/>
                 </div>
