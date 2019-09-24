@@ -22,7 +22,7 @@ class MenuContainer extends Component
     {
         this.setState((prevState) => (
             {
-                visible : !this.state.visible
+                visible : !prevState.visible
             }
         ));
     }
