@@ -9,9 +9,7 @@ import ToDoList from './ToDoList';
 import MenuContainer from './MenuContainer';
 
 ReactDOM.render(
-    <div>
         <MenuContainer/>
-    </div>
     , document.getElementById('root'));
 //ReactDOM.render(<App />, document.getElementById('root'));
 
