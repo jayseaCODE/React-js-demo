@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Route, NavLink, HashRouter} from "react-router-dom";
 import './MenuContainer.css'
 import Menu from './Menu';
 import MenuButton from './MenuButton';
@@ -37,15 +38,22 @@ class MenuContainer extends Component
     render()
     {
         return (
-            <div>
-                <MenuButton handleMouseDown={this.handleMouseDown}/>
-                <Menu handleMouseDown={this.handleMouseDown}
-                        menuVisibility={this.state.visible}/>
-                <div className="toDoList">
-                    <ToDoList/>
+            <HashRouter forceRefresh={true}>
+                <div>
+                    <MenuButton handleMouseDown={this.handleMouseDown}/>
+                    <Menu handleMouseDown={this.handleMouseDown}
+                            menuVisibility={this.state.visible}/>
+                    <ul className="header">
+                        <li><NavLink to="/">Home</NavLink></li>
+                        <li><NavLink to="/todolist">To Do List</NavLink></li>
+                    </ul>
+                    <div className="content">
+                        <Route exact path="/"/>
+                        <Route path="/todolist" component={ToDoList}/>
+                    </div>
                 </div>
-            </div>
-        )
+            </HashRouter>
+        );
     }
 }
 
