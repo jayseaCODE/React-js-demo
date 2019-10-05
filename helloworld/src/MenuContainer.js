@@ -44,7 +44,7 @@ class MenuContainer extends Component
                     <Menu handleMouseDown={this.handleMouseDown}
                             menuVisibility={this.state.visible}/>
                     <ul className="header">
-                        <li><NavLink to="/">Home</NavLink></li>
+                        <li><NavLink exact to="/">Home</NavLink></li>
                         <li><NavLink to="/todolist">To Do List</NavLink></li>
                     </ul>
                     <div className="content">
