@@ -4,6 +4,7 @@ import './MenuContainer.css'
 import Menu from './Menu';
 import MenuButton from './MenuButton';
 import ToDoList from './ToDoList';
+import Button from '@material-ui/core/Button';
 
 class MenuContainer extends Component
 {
@@ -51,6 +52,9 @@ class MenuContainer extends Component
                         <Route exact path="/"/>
                         <Route path="/todolist" component={ToDoList}/>
                     </div>
+                    <Button variant="contained" color="primary">
+                        Hello World
+                    </Button>
                 </div>
             </HashRouter>
         );
