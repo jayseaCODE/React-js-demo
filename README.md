@@ -72,13 +72,16 @@ So far, we’ve been building this app in development mode. In this mode, our co
 npm run build
 ```
 
-The script takes a few minutes to create an optimized set of files for you.
+Builds the app for production to the build folder.
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.
+
+Your app is ready to be deployed.
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Create React App](https://github.com/facebook/create-react-app) - The tool used to setup this React app
 
 ## Contributing
 
@@ -90,7 +93,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Joshua Chen** - *Initial work* - [jayseaCODE](https://github.com/jayseaCODE)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
