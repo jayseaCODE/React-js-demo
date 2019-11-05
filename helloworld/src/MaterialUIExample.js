@@ -33,7 +33,13 @@ class MaterialUIExample extends Component
                     Hello World
                 </Button>
                 <Paper>
-                    <form>
+                    <Typography variant='h1'
+                                align='center'
+                                gutterBottom>
+                        Exercises
+                    </Typography>
+                    <form onSubmit={this.handleSubmit}>
+                        {/* The name 'title' is being used in handleChange */}
                         <TextField
                             name="title"
                             label="Type in an exercise here"
@@ -41,11 +47,6 @@ class MaterialUIExample extends Component
                             onChange={this.handleChange}
                             margin='normal'/>
                     </form>
-                    <Typography variant='h1'
-                                align='center'
-                                gutterBottom>
-                                    Exercises
-                    </Typography>
                 </Paper>
             </div>
         );
