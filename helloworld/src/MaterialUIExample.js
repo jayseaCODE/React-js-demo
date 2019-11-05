@@ -12,7 +12,7 @@ class MaterialUIExample extends Component
         this.state = {};
     }
 
-    // Using Arrow function feature
+    // Using Arrow function feature which allows us to bind the 'this' object in our methods instead of binding it in the constructor
     handleChange =  ({
         target: {
             name,
@@ -48,6 +48,7 @@ class MaterialUIExample extends Component
             );
         }
     }
+
     render()
     {
         // Using Destructuring assignment feature
