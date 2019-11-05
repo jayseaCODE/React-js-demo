@@ -36,7 +36,7 @@ class MaterialUIExample extends Component
                     <form>
                         <TextField
                             name="title"
-                            label="Exercise"
+                            label="Type in an exercise here"
                             value={title}
                             onChange={this.handleChange}
                             margin='normal'/>
