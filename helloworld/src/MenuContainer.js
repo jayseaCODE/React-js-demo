@@ -4,7 +4,7 @@ import './MenuContainer.css'
 import Menu from './Menu';
 import MenuButton from './MenuButton';
 import ToDoList from './ToDoList';
-import Button from '@material-ui/core/Button';
+import MaterialUIExample from './MaterialUIExample';
 
 class MenuContainer extends Component
 {
@@ -47,14 +47,13 @@ class MenuContainer extends Component
                     <ul className="header">
                         <li><NavLink exact to="/">Home</NavLink></li>
                         <li><NavLink to="/todolist">To Do List</NavLink></li>
+                        <li><NavLink to="/materialuiexample">Material UI Component</NavLink></li>
                     </ul>
                     <div className="content">
                         <Route exact path="/"/>
                         <Route path="/todolist" component={ToDoList}/>
+                        <Route path="/materialuiexample" component={MaterialUIExample}/>
                     </div>
-                    <Button variant="contained" color="primary">
-                        Hello World
-                    </Button>
                 </div>
             </HashRouter>
         );
