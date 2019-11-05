@@ -29,9 +29,6 @@ class MaterialUIExample extends Component
 
         return (
             <div>
-                <Button variant="contained" color="primary">
-                    Hello World
-                </Button>
                 <Paper>
                     <Typography variant='h1'
                                 align='center'
@@ -46,6 +43,11 @@ class MaterialUIExample extends Component
                             value={title}
                             onChange={this.handleChange}
                             margin='normal'/>
+                        <Button type="submit"
+                                variant="contained" 
+                                color="primary">
+                            Submit
+                        </Button>
                     </form>
                 </Paper>
             </div>
