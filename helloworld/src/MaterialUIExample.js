@@ -22,6 +22,32 @@ class MaterialUIExample extends Component
         [name]: value
     })
 
+    handleSubmit = e => {
+        // Prevent the default behavior of Form Submit, which reloads the whole page
+        e.preventDefault();
+        // Check if title field is non-empty
+        if (this.state.title)
+        {
+            // Uses setState() updated function to mitigate async updates
+            this.setState(
+                ( 
+                    // Destructure exercises and title from the prevState {} object
+                    {
+                        exercises, 
+                        title
+                    } 
+                ) =>
+                (
+                    {
+                        // Spead out exercises into the next state with a new exercises object
+                        exercises: [ ...exercises, {title, id: Date.now()} ],
+                        // Reset the title field
+                        title: ''
+                    }
+                )
+            );
+        }
+    }
     render()
     {
         // Using Destructuring assignment feature
