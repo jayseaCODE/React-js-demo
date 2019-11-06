@@ -52,7 +52,7 @@ class MaterialUIExample extends Component
     render()
     {
         // Using Destructuring assignment feature
-        const { title } = this.state;
+        const { title, exercises } = this.state;
 
         return (
             <div>
