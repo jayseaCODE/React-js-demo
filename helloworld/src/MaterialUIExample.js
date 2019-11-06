@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {Button, List, ListItem, ListItemText, Paper, TextField, Typography} from '@material-ui/core';
+import {Button, IconButton, List, ListItem, ListItemText, ListItemSecondaryAction,
+         Paper, TextField, Typography} from '@material-ui/core';
 
 /*
  * Following tutorials from https://material-ui.com/getting-started/learn/
@@ -88,6 +89,11 @@ class MaterialUIExample extends Component
                                 ({id, title}) => 
                                 <ListItem key={id}>
                                     <ListItemText primary={title}/>
+                                    <ListItemSecondaryAction>
+                                        <IconButton color='primary'>
+                                            What's this do
+                                        </IconButton>
+                                    </ListItemSecondaryAction>
                                 </ListItem>
                             )
                         )}
