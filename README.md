@@ -81,7 +81,7 @@ Your app is ready to be deployed.
 
 ## Built With
 
-* [Create React App](https://github.com/facebook/create-react-app) - The tool used to setup this React app
+* [Create React App](https://github.com/facebook/create-react-app) - The tool used to bootstrap this React app
 
 ## Contributing
 
