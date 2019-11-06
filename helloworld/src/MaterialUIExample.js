@@ -62,12 +62,12 @@ class MaterialUIExample extends Component
 
         return (
             <div>
-                <Paper>
-                    <Typography variant='h1'
+                <Typography variant='h1'
                                 align='center'
                                 gutterBottom>
-                        Exercises
-                    </Typography>
+                    Exercises
+                </Typography>
+                <Paper>
                     <form onSubmit={this.handleSubmit}>
                         {/* The name 'title' is being used in handleChange */}
                         <TextField
