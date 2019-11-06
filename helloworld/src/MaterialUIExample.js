@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Paper, Typography, TextField, Button} from '@material-ui/core';
+import {Button, List, ListItem, ListItemText, Paper, TextField, Typography} from '@material-ui/core';
 
 /*
  * Following tutorials from https://material-ui.com/getting-started/learn/
@@ -76,6 +76,16 @@ class MaterialUIExample extends Component
                             Submit
                         </Button>
                     </form>
+                    <List>
+                        {(
+                            exercises.map(
+                                ({id, title}) => 
+                                <ListItem key={id}>
+                                    <ListItemText primary={title}/>
+                                </ListItem>
+                            )
+                        )}
+                    </List>
                 </Paper>
             </div>
         );
