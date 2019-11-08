@@ -73,6 +73,7 @@ class MaterialUIExample extends Component
     {
         // Using Destructuring assignment feature
         const { title, exercises } = this.state;
+        const {classes} = this.props;
 
         return (
             <div>
@@ -81,7 +82,7 @@ class MaterialUIExample extends Component
                                 gutterBottom>
                     Exercises
                 </Typography>
-                <Paper>
+                <Paper className={classes.ExercisesListStyle}>
                     <form onSubmit={this.handleSubmit}>
                         {/* The name 'title' is being used in handleChange */}
                         <TextField
