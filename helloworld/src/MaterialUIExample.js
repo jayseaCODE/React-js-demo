@@ -56,6 +56,17 @@ class MaterialUIExample extends Component
         }
     }
 
+    handleDelete = id => {
+        this.setState(
+            ({
+                exercises
+            }) =>
+            ({
+                exercises: exercises.filter(exercise => exercise.id !== id)
+            })
+        );
+    }
+
     render()
     {
         // Using Destructuring assignment feature
@@ -90,7 +101,8 @@ class MaterialUIExample extends Component
                                 <ListItem key={id}>
                                     <ListItemText primary={title}/>
                                     <ListItemSecondaryAction>
-                                        <IconButton color='primary'>
+                                        <IconButton color='primary'
+                                                    onClick={()=>this.handleDelete(id)}>
                                             What's this do
                                         </IconButton>
                                     </ListItemSecondaryAction>
