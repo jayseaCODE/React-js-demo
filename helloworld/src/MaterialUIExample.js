@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Button, IconButton, List, ListItem, ListItemText, ListItemSecondaryAction,
          Paper, TextField, Typography} from '@material-ui/core';
 import {Delete} from '@material-ui/icons';
+import { withStyles } from '@material-ui/core/styles'; //https://material-ui.com/styles/basics/#higher-order-component-api
 
 /*
  * Following tutorials from https://material-ui.com/getting-started/learn/
@@ -117,4 +118,11 @@ class MaterialUIExample extends Component
     }
 }
 
-export default MaterialUIExample;
+const styles = { 
+    ExercisesListStyle: 
+    {
+        margin: 20, padding: 20, maxWidth: 400,
+    }
+}
+
+export default withStyles(styles)(MaterialUIExample);
