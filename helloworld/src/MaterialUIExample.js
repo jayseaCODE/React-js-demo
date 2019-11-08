@@ -10,16 +10,16 @@ import { withStyles } from '@material-ui/core/styles'; //https://material-ui.com
  */
 class MaterialUIExample extends Component
 {
+    
     constructor(props){
         super(props);
-
         this.state = {
             exercises: [
                 {id: 1, title: "Bench press"},
                 {id: 2, title: "Pull ups"},
                 {id: 3, title: "Squats"},
             ]
-        }
+        };
     }
 
     // Using Arrow function feature which allows us to bind the 'this' object in our methods instead of binding it in the constructor
