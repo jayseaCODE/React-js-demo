@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {PropTypes} from 'prop-types';
 import {Button, IconButton, List, ListItem, ListItemText, ListItemSecondaryAction,
          Paper, TextField, Typography} from '@material-ui/core';
 import {Delete} from '@material-ui/icons';
@@ -125,5 +126,9 @@ const styles = {
         margin: 20, padding: 20, maxWidth: 400,
     }
 }
+// Remember Prop-Types is only checked when in development mode - for performance reasons
+MaterialUIExample.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
 
 export default withStyles(styles)(MaterialUIExample);
