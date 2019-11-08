@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Button, IconButton, List, ListItem, ListItemText, ListItemSecondaryAction,
          Paper, TextField, Typography} from '@material-ui/core';
+import {Delete} from '@material-ui/icons';
 
 /*
  * Following tutorials from https://material-ui.com/getting-started/learn/
@@ -103,7 +104,7 @@ class MaterialUIExample extends Component
                                     <ListItemSecondaryAction>
                                         <IconButton color='primary'
                                                     onClick={()=>this.handleDelete(id)}>
-                                            What's this do
+                                            <Delete />
                                         </IconButton>
                                     </ListItemSecondaryAction>
                                 </ListItem>
