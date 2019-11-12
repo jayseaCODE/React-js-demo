@@ -1,10 +1,20 @@
 import React from 'react';
 import logo from '../shared/images/logo.svg';
 import './App.css';
+import Header from '../shared/components/layout/Header';
+import Content from '../shared/components/layout/Content';
+import Footer from '../shared/components/layout/Footer';
 import MenuContainer from '../MenuContainer';
 
 function App() {
-  return ( <MenuContainer/>);
+  return ( 
+    <div>
+      <Header title='Welcome'/>
+      <Content>
+        <MenuContainer/>
+      </Content>
+      <Footer/>
+    </div>);
   /*
     <div className="App">
       <header className="App-header">
