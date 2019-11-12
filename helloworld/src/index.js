@@ -3,10 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
-import IPAddressContainer from "./IPAddressContainer.js";
-import HelloWorld from './HelloWorld'
-import ToDoList from './ToDoList';
-import MenuContainer from './MenuContainer';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
