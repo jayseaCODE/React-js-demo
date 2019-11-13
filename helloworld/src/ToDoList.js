@@ -9,6 +9,7 @@ class ToDoList extends Component
     super(props);
 
     this.state = {
+      task: '',
       items: []
     };
 
@@ -17,21 +18,26 @@ class ToDoList extends Component
     this.handleOnChange = this.handleOnChange.bind(this);
   }
 
-  addItem(e)
+  addItem(event)
   {
-    var itemArray = this.state.items;
-    if (this._inputElement.value !== "") {
-      itemArray.unshift(
-        {
-          text: this._inputElement.value,
-          key: Date.now()    
-        }
-      );     
-      this.setState({items: itemArray});
-      this._inputElement.value = "";  
-    }   
-    console.log(itemArray);   
-    e.preventDefault();
+    // Prevent default to avoid the actual form submit...
+    event.preventDefault();
+
+    //if (this._inputElement.value !== "") {
+    if (this.state.task.trim() !== '') 
+    {
+      this.setState({
+        task: '',
+        items: [
+          ...this.state.items,
+          {
+            text: this.state.task, //this._inputElement.value,
+            key: Date.now() 
+          },
+        ]
+      });
+      //this._inputElement.value = "";
+    }
   }
   deleteItem(key)
   {
@@ -47,8 +53,11 @@ class ToDoList extends Component
   handleOnChange(event)
   {
     const alternativeInput = event.target.value;
-    const checkInputElement = this._inputElement.value;
+    //const checkInputElement = this._inputElement.value;
     // alternativeInput and checkInputElement should contain the same value
+    this.setState({
+      task: event.target.value
+    });
   }
 
   render() {
@@ -56,8 +65,9 @@ class ToDoList extends Component
         <div className="todoListMain">
           <div className="header">
             <form onSubmit={this.addItem}>
-              <input  ref={(a)=>this._inputElement = a} 
+              <input //ref={(a)=>this._inputElement = a}
                       placeholder="enter task"
+                      value={this.state.task}
                       onChange={this.handleOnChange}>
               </input>
               <button type="submit">add</button>
