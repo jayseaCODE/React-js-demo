@@ -6,11 +6,11 @@ class ToDoList extends Component
 {
   constructor(props)
   {
-    super(props)
+    super(props);
 
     this.state = {
       items: []
-    }
+    };
 
     this.addItem = this.addItem.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
