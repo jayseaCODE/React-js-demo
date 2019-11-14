@@ -1,0 +1,42 @@
+.todoListMain .Todo {
+    margin: 20px 0px;
+    padding: 0;
+    list-style: none;
+}
+
+.todoListMain .Todo li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -1px;
+    padding: 10px 15px;
+}
+
+.todoListMain .Todo li .hide {
+    visibility: hidden;
+}
+
+.todoListMain .Todo li .completed {
+    background-color: #dff0d8;
+}
+
+.todoListMain .Todo li .actions {
+    display: flex;
+    justify-content: space-between;
+    width: 40px;
+}
+
+.todoListMain .Todo li span {
+    cursor: pointer;
+}
+
+.todoListMain .Todo li .done {
+    color: #79c41d;
+    display: block;
+}
+
+.todoListMain .Todo li .trash {
+    color: #c41d1d;
+    display: block;
+}
