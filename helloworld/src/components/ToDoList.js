@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import uuidv4 from 'uuid/v4';
 import ToDoItems from "./ToDoItems";
 import "./ToDoList.css";
 
@@ -15,6 +16,7 @@ class ToDoList extends Component
 
     this.addItem = this.addItem.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
+    this.markAsCompleted = this.markAsCompleted.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
   }
 
@@ -31,20 +33,23 @@ class ToDoList extends Component
         items: [
           ...this.state.items,
           {
+            id: uuidv4(),
             text: this.state.task, //this._inputElement.value,
-            key: Date.now() 
+            key: Date.now(),
+            completed: false,
           },
         ]
       });
       //this._inputElement.value = "";
     }
   }
-  deleteItem(key)
+  deleteItem = key =>
   {
-    var filteredItems = this.state.items.filter(function(item) {
-      return (item.key !== key);
-    });
-   
+    // Filtering the items based on the specific item key timestamp...
+    var filteredItems = this.state.items.filter(
+      item => (item.key !== key)
+    );
+   // Update the local state items...
     this.setState({
       items: filteredItems
     });
@@ -61,21 +66,23 @@ class ToDoList extends Component
   }
 
   render() {
+    let changeToDoListItemsApperance = false;
       return (
-        <div className="todoListMain">
-          <div className="header">
-            <form onSubmit={this.addItem}>
-              <input //ref={(a)=>this._inputElement = a}
-                      placeholder="enter task"
-                      value={this.state.task}
-                      onChange={this.handleOnChange}>
-              </input>
-              <button type="submit">add</button>
-            </form>
-            <ToDoItems  entries={this.state.items}
-                        delete={this.deleteItem} /> 
+          <div className="todoListMain">
+            <div className="header">
+              {/*<button onClick={()=> { changeToDoListItemsApperance = !changeToDoListItemsApperance}}/>*/}
+              <form onSubmit={this.addItem}>
+                <input //ref={(a)=>this._inputElement = a}
+                        placeholder="enter task"
+                        value={this.state.task}
+                        onChange={this.handleOnChange}>
+                </input>
+                <button type="submit">add</button>
+              </form>
+              <ToDoItems  entries={this.state.items}
+                          delete={this.deleteItem} /> 
+            </div>
           </div>
-        </div>
       );
   }
 }
