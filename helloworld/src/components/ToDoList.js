@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import uuidv4 from 'uuid/v4';
 import ToDoItems from "./ToDoItems";
 import "./ToDoList.css";
+import ToDoItemsV2 from "./ToDoItemsV2";
 
 class ToDoList extends Component
 {
@@ -54,6 +55,22 @@ class ToDoList extends Component
       items: filteredItems
     });
   }
+  markAsCompleted = id => {
+    // Find the Item by id...
+    const foundItem = this.state.items.find(
+      item => item.id === id
+    );
+
+    // Update the found item's completed status...
+    foundItem.completed = true;
+
+    // Update the local state with new updated item...
+    this.setState({
+      items: [
+        ...this.state.items,
+      ]
+    });
+  }
 
   handleOnChange(event)
   {
@@ -82,6 +99,9 @@ class ToDoList extends Component
               <ToDoItems  entries={this.state.items}
                           delete={this.deleteItem} /> 
             </div>
+            <ToDoItemsV2  items={this.state.items}
+                        markAsCompleted={this.markAsCompleted}
+                        delete={this.deleteItem}/>
           </div>
       );
   }
