@@ -3,7 +3,7 @@ import "./ToDoItemsV2.css";
 
 const ToDoItemsV2 = props => 
 (
-<ul className="Todo">
+<ul className="ToDoItemsV2">
     {props.items.map((item, key) => (
         <li key={key}
             className={`${item.completed ? 'completed' : 'pending'}`}

@@ -1,10 +1,10 @@
-.todoListMain .Todo {
+.todoListMain > .ToDoItemsV2 {
     margin: 20px 0px;
     padding: 0;
     list-style: none;
 }
 
-.todoListMain .Todo li {
+.todoListMain > .ToDoItemsV2 li {
     background-color: #fff;
     border: 1px solid #ddd;
     display: flex;
@@ -13,30 +13,30 @@
     padding: 10px 15px;
 }
 
-.todoListMain .Todo li .hide {
-    visibility: hidden;
-}
-
-.todoListMain .Todo li .completed {
+.todoListMain > .ToDoItemsV2 li.completed {
     background-color: #dff0d8;
 }
 
-.todoListMain .Todo li .actions {
+.todoListMain > .ToDoItemsV2 li .actions {
     display: flex;
     justify-content: space-between;
     width: 40px;
 }
 
-.todoListMain .Todo li span {
+.todoListMain > .ToDoItemsV2 li span {
     cursor: pointer;
 }
 
-.todoListMain .Todo li .done {
+.todoListMain > .ToDoItemsV2 li span.hide {
+    visibility: hidden;
+}
+
+.todoListMain > .ToDoItemsV2 li span.done {
     color: #79c41d;
     display: block;
 }
 
-.todoListMain .Todo li .trash {
+.todoListMain > .ToDoItemsV2 li span.trash {
     color: #c41d1d;
     display: block;
 }
