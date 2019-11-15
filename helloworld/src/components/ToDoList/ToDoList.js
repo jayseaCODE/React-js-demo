@@ -12,13 +12,29 @@ class ToDoList extends Component
 
     this.state = {
       task: '',
-      items: []
+      items: [],
     };
 
     this.addItem = this.addItem.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
     this.markAsCompleted = this.markAsCompleted.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
+  }
+
+  componentDidMount()
+  {
+    this.checkLocalStorageForItems();
+  }
+
+  checkLocalStorageForItems = () => 
+  {
+    var updatedToDoList = localStorage.getItem('ToDoList');
+    if (updatedToDoList !== null)
+    {
+      this.setState({
+        items: JSON.parse(updatedToDoList),
+      });
+    }
   }
 
   addItem(event)
@@ -29,19 +45,23 @@ class ToDoList extends Component
     //if (this._inputElement.value !== "") {
     if (this.state.task.trim() !== '') 
     {
+      let newArrayOfItems = [
+        ...this.state.items,
+        {
+          id: uuidv4(),
+          text: this.state.task, //this._inputElement.value,
+          key: Date.now(),
+          completed: false,
+        },
+      ];
+
       this.setState({
         task: '',
-        items: [
-          ...this.state.items,
-          {
-            id: uuidv4(),
-            text: this.state.task, //this._inputElement.value,
-            key: Date.now(),
-            completed: false,
-          },
-        ]
+        items: newArrayOfItems,
       });
-      //this._inputElement.value = "";
+
+      // Save updated Items to local storage
+      localStorage.setItem('ToDoList', JSON.stringify(newArrayOfItems));
     }
   }
   deleteItem = key =>
@@ -54,6 +74,9 @@ class ToDoList extends Component
     this.setState({
       items: filteredItems
     });
+
+    // Save updated Items to local storage
+    localStorage.setItem('ToDoList', JSON.stringify(filteredItems));
   }
   markAsCompleted = id => {
     // Find the Item by id...
@@ -70,6 +93,10 @@ class ToDoList extends Component
         ...this.state.items,
       ]
     });
+
+    // Save updated Items to local storage
+    localStorage.setItem('ToDoList', JSON.stringify(this.state.items));
+  }
   }
 
   handleOnChange(event)
