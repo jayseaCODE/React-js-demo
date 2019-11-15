@@ -97,7 +97,15 @@ class ToDoList extends Component
     // Save updated Items to local storage
     localStorage.setItem('ToDoList', JSON.stringify(this.state.items));
   }
+  clearAllItems = () =>
+  {
+    this.setState({
+      items: [],
+    })
+    // Clear local storage too
+    localStorage.clear('ToDoList');
   }
+  
 
   handleOnChange(event)
   {
@@ -115,13 +123,14 @@ class ToDoList extends Component
           <div className="todoListMain">
             <div className="header">
               {/*<button onClick={()=> { changeToDoListItemsApperance = !changeToDoListItemsApperance}}/>*/}
-              <form onSubmit={this.addItem}>
+              <form onSubmit={this.addItem} onReset={this.clearAllItems}>
                 <input //ref={(a)=>this._inputElement = a}
                         placeholder="enter task"
                         value={this.state.task}
                         onChange={this.handleOnChange}>
                 </input>
                 <button type="submit">Add</button>
+                <button className="reset" type="reset">Clear All</button>
               </form>
               <ToDoItems  entries={this.state.items}
                           delete={this.deleteItem} /> 
