@@ -121,7 +121,7 @@ class ToDoList extends Component
                         value={this.state.task}
                         onChange={this.handleOnChange}>
                 </input>
-                <button type="submit">add</button>
+                <button type="submit">Add</button>
               </form>
               <ToDoItems  entries={this.state.items}
                           delete={this.deleteItem} /> 
