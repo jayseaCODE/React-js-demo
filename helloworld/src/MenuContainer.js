@@ -4,6 +4,7 @@ import './MenuContainer.css'
 import Menu from './Menu';
 import MenuButton from './MenuButton';
 import ToDoList from './components/ToDoList/ToDoList';
+import PomodoroTimer from './components/Pomodoro/Timer';
 import MaterialUIExample from './MaterialUIExample';
 
 class MenuContainer extends Component
@@ -47,11 +48,13 @@ class MenuContainer extends Component
                     <ul className="header">
                         <li><NavLink exact to="/">Home</NavLink></li>
                         <li><NavLink to="/todolist">To Do List</NavLink></li>
+                        <li><NavLink to="/pomodorotimer">Pomodoro Timer</NavLink></li>
                         <li><NavLink to="/materialuiexample">Material UI Component</NavLink></li>
                     </ul>
                     <div className="content">
                         <Route exact path="/"/>
                         <Route path="/todolist" component={ToDoList}/>
+                        <Route path="/pomodorotimer" component={PomodoroTimer}/>
                         <Route path="/materialuiexample" component={MaterialUIExample}/>
                     </div>
                 </div>
