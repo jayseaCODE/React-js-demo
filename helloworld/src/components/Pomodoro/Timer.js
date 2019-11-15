@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Instructions from './Instructions';
 
 class Timer extends Component{
     constructor()
@@ -130,6 +131,7 @@ class Timer extends Component{
                             onClick={this.setTimeForLongBreak}
                     > Long Break </button>
                 </div>
+                <Instructions/>
             </div>
         )
     }
