@@ -18,6 +18,20 @@
     border: 2px solid #003399;
     cursor: pointer;
   }
+  .todoListMain .header button.reset {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px;
+    margin-right: 0px;
+    background-color: rgb(255, 79, 79);
+    color: #FFF;
+    border: 2px solid rgb(255, 79, 79);
+  }
+  .todoListMain .header button.reset:hover {
+    background-color: rgb(255, 30, 30);
+    border: 2px solid rgb(255, 30, 30);
+    cursor: pointer;
+  }
   .todoListMain .theList {
     list-style: none;
     padding-left: 0;
